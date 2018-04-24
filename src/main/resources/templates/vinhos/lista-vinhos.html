@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/layout-padrao}">
+<head>
+	<link rel="stylesheet" type="text/css" th:href="@{/stylesheets/lista-vinhos.css}" />
+</head>
+
+<body>	
+
+	<section layout:fragment="conteudo">
+		<div class="page-header">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-8">
+							<h1>
+								Lista vinhos
+							</h1>
+						</div>
+
+						<div class="col-xs-4">
+							<div class="aw-page-header-controls">
+								<a class="btn btn-primary" href="cadastro-vinho.html">
+									<i class="fa fa-plus-square"></i>
+
+									<span class="hidden-xs hidden-sm">Cadastro vinho</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container-fluid">
+				<div class="alert  alert-success">
+					<i class="fa fa-check-circle"></i>
+					
+					<span>Mensagem sucesso!</span>
+				</div>
+
+				<div class="table-responsive">
+					<table id="tabela-produtos" class="table  table-striped  table-bordered  table-hover  table-condensed  js-sticky-table">
+						<thead class="aw-table-header-solid">
+							<tr>
+								<th class="av-table-vinhos-col-codigo">Código</th>
+								<th>Nome</th>
+								<th class="av-table-vinhos-col-tipo">Tipo</th>
+								<th class="av-table-vinhos-col-valor">Valor</th>
+								<th class="av-table-vinhos-col-icons"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="text-center">1</td>
+
+								<td>
+									<a href="javascript:;">Vinho Azul</a>
+								</td>
+
+								<td>Tinto</td>
+
+								<td class="text-right">55,00</td>
+
+								<td class="text-center">
+									<form method="POST" onsubmit="return confirm('Posso remover?');">
+										<button type="submit" class="btn btn-danger btn-xs">
+											<span class="fa fa-trash"></span>
+										</button>
+									</form>
+								</td>
+							</tr>
+
+							<tr>
+								<td colspan="5">Nenhum vinho cadastrado</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+	</section>
+</body>
+</html>

@@ -23,6 +23,11 @@ public class VinhosController {
 	@Autowired
 	private Vinhos vinhos; 
 	
+	@GetMapping
+	public String listar() {
+		return "vinhos/lista-vinhos";
+	}
+	
 	@GetMapping("/{id}")
 	public ModelAndView editar(@PathVariable Long id){
 		
