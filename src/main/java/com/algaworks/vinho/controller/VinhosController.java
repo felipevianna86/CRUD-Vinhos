@@ -24,8 +24,10 @@ public class VinhosController {
 	private Vinhos vinhos; 
 	
 	@GetMapping
-	public String listar() {
-		return "vinhos/lista-vinhos";
+	public ModelAndView listar() {
+		ModelAndView modelAndView = new ModelAndView("vinhos/lista-vinhos");
+		modelAndView.addObject("vinhos", vinhos.findAll());
+		return modelAndView;
 	}
 	
 	@GetMapping("/{id}")
