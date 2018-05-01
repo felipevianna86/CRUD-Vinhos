@@ -67,7 +67,11 @@
 								th:text="|R$${{vinho.valor}}|">55,00</td>
 
 								<td class="text-center">
-									<form method="POST" onsubmit="return confirm('Posso remover?');">
+									<form method="POST" 
+									th:onsubmit="'return confirm(\'Posso remover ' + ${vinho.nome} + '?\');'"
+									th:action="@{/vinhos/{id}(id=${vinho.id})}">
+									
+									<input type="hidden" name="_method" value="DELETE" />
 										<button type="submit" class="btn btn-danger btn-xs">
 											<span class="fa fa-trash"></span>
 										</button>
